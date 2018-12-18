@@ -1,12 +1,13 @@
 ﻿import studentcard as sc
 
+
 class MainShopChanger:
     insertedStudentCard = None
-    
+
     @classmethod
     def insertStudentCard(self, _number):
         MainShopChanger.insertedStudentCard = sc.StudentCard.cardlist(_number)
-    
+
     @classmethod
     def chargeMoney(self, _money):
         if MainShopChanger.insertedStudentCard is None:
@@ -14,7 +15,7 @@ class MainShopChanger:
             return
         MainShopChanger.insertedStudentCard.chargeMoney(_money)
         MainShopChanger.printAccountBalance()
-    
+
     @classmethod
     def dischargeMoney(self, _money):
         if MainShopChanger.insertedStudentCard is None:
@@ -25,11 +26,9 @@ class MainShopChanger:
             return False
         MainShopChanger.printAccountBalance()
         return True
-    
-    
+
     @classmethod
     def printAccountBalance(self):
         print("残高を表示します")
         print("学生名:" + str(MainShopChanger.insertedStudentCard.getName()))
         print("残高:" + str(MainShopChanger.insertedStudentCard.getMoney()))
-
