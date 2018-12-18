@@ -3,9 +3,6 @@
 class MainShopChanger:
     insertedStudentCard = None
     
-    def __init__(self):
-        1
-    
     @classmethod
     def insertStudentCard(self, _number):
         MainShopChanger.insertedStudentCard = sc.StudentCard.cardlist(_number)
